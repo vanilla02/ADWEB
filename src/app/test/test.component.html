@@ -1,0 +1,34 @@
+<p>test works!</p>
+<div *ngIf="true">Display Data</div>
+
+<p>ngIfElse Example</p>
+<div *ngIf="isLogIn; else isLogOut">Hello you are logged in</div>
+<ng-template #isLogOut>You're logged out!</ng-template>
+
+<p>*ngFor Example</p>
+<ul>
+  <li *ngFor="let i of list">
+    {{ i }}
+  </li>
+</ul>
+
+<h2>*ngFor Example</h2>
+<p>List of students and employees</p>
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.userName }} ({{ user.userId }})
+    <span *ngIf="user.type === 'employee'"> - Employee</span>
+    <span *ngIf="user.type === 'student'"> - Student</span>
+  </li>
+</ul>
+
+<p>*ngSwitch Example</p>
+
+<h2>ngSwitch directive</h2>
+<ul [ngSwitch]="loginName">
+  <li *ngSwitchCase="'user'"><p>User is logged in</p></li>
+  <li *ngSwitchCase="'admin'"><p>Admin is logged in</p></li>
+  <li *ngSwitchDefault><p>Please choose login name.</p></li>
+</ul>
+
+<p [ngStyle]="{'color':'blue','font-size':'14px'}">paragraph style is applied using ngStyle</p>
